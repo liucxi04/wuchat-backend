@@ -2,11 +2,10 @@
 
 这是网页聊天室的后端代码，前端见 [wuchat-front](https://github.com/liucxi04/wuchat-front)。
 
-本项目实现了一个简单的临时网页聊天室
-
 主要使用到的技术栈如下：
  - luwu1.0
  - websocket
+ 
 包含以下功能：
  - 登陆
  - 私聊
