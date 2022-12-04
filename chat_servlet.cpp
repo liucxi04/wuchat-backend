@@ -112,6 +112,9 @@ int ChatServlet::handle(http::HttpRequest::ptr req, http::WSFrameMessage::ptr ms
         rsp["type"] = "chat_init_response";
         rsp["time"] = std::to_string(time(nullptr));
         for (const auto& info : users_) {
+            if (info.first == "group") {
+                continue;
+            }
             nlohmann::json user;
             user["id"] = info.first;
             user["name"] = info.second.first;
@@ -130,14 +133,16 @@ int ChatServlet::handle(http::HttpRequest::ptr req, http::WSFrameMessage::ptr ms
         json["avatar"] = info.second;
         notifyConn(std::make_shared<http::WSFrameMessage>(http::WSFrameHead::TEXT_FRAME, json.dump()), conn);
     } else if (type == "chat_request") {
-        nlohmann::json rsp;
+        nlohmann::json rsp = data;
         rsp["type"] = "chat_response";
         rsp["time"] = std::to_string(time(nullptr));
-        rsp["from"] = data.at("from");
-        rsp["to"] = data.at("to");
-        rsp["content"] = data.at("content");
-        auto to_conn = conns_[rsp.at("to")];
-        to_conn->sendMessage(std::make_shared<http::WSFrameMessage>(msg->getOpcode(), rsp.dump()));
+        rsp["server"] = "server";
+        if (data.at("to") == "group") {
+            notifyConn(std::make_shared<http::WSFrameMessage>(http::WSFrameHead::TEXT_FRAME, rsp.dump()), conn);
+        } else {
+            auto to_conn = conns_[data.at("to")];
+            to_conn->sendMessage(std::make_shared<http::WSFrameMessage>(msg->getOpcode(), rsp.dump()));
+        }
     }
     return 0;
 }
