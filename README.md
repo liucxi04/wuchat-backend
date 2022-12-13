@@ -41,14 +41,14 @@ cd bin
 客户端
 | 序号 | 名称         | 协议内容                                                     |
 | ---- | ------------ | ------------------------------------------------------------ |
-| 1    | 客户端登陆   | {"type" : "login_request","time" :  "2020-05-07 11:34:56""name" : "liucxi","avatar" : "../data/1001.png"} |
-| 2    | 聊天室初始化 | {"type" : "chat_init_request","time" :  "2020-05-07 11:34:56"} |
-| 3    | 聊天消息     | {"type" : "chat_request","time" :  "2020-05-07 11:34:56""from" : "dafiulbvao""to" : "dvkpvnjrnvipr""content" : "hello world"} |
+| 1    | 客户端登陆   | {"type" : "login_request", "time" : "2020-05-07 11:34:56", "name" : "liucxi", "avatar" : "../data/1001.png"} |
+| 2    | 聊天室初始化 | {"type" : "chat_init_request", "time" : "2020-05-07 11:34:56"} |
+| 3    | 聊天消息     | {"type" : "chat_request", "time" : "2020-05-07 11:34:56", "from" : "dafiulbvao", "to" : "dvkpvnjrnvipr", "content" : "hello world"} |
 
 服务端
 | 序号 | 名称             | 协议内容                                                     |
 | ---- | ---------------- | ------------------------------------------------------------ |
-| 1    | 客户端登陆结果   | {"type" : "login_response","time" :  "2020-05-07 11:34:56""id" : "axcderbrbbfds""name" : "liucxi","avatar" : "../data/1001.png"} |
-| 2    | 聊天室初始化结果 | {"type" : "chat_init_response","time" :  "2020-05-07 11:34:56""data" : [{"id" : "axcderbrbbfds""name" : "liucxi","avatar" : "../data/1001.png"}{...}]} |
-| 3    | 聊天消息结果     | {"type" : "chat_response","time" :  "2020-05-07 11:34:56""from" : "dafiulbvao""to" : "dvkpvnjrnvipr""content" : "hello world"} |
-| 4    | 用户变动消息     | {"type" : "user_change_response","time" :  "2020-05-07 11:34:56""code" : "1""id" : "axcderbrbbfds""name" : "liucxi","avatar" : "../data/1001.png"}1 新增 / 2 删除 |
+| 1    | 客户端登陆结果   | {"type" : "login_response", "time" :  "2020-05-07 11:34:56", "id" : "axcderbrbbfds", "name" : "liucxi", "avatar" : "../data/1001.png"} |
+| 2    | 聊天室初始化结果 | {"type" : "chat_init_response", "time" :  "2020-05-07 11:34:56", "data" : [{"id" : "axcderbrbbfds", "name" : "liucxi", "avatar" : "../data/1001.png"}]} |
+| 3    | 聊天消息结果     | {"type" : "chat_response", "time" :  "2020-05-07 11:34:56", "from" : "dafiulbvao", "to" : "dvkpvnjrnvipr", "content" : "hello world"} |
+| 4    | 用户变动消息     | {"type" : "user_change_response", "time" :  "2020-05-07 11:34:56", "code" : "1", "id" : "axcderbrbbfds", "name" : "liucxi", "avatar" : "../data/1001.png"} 1 新增 / 2 删除 |
