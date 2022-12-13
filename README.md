@@ -44,6 +44,7 @@ cd bin
 | 1    | 客户端登陆   | {"type" : "login_request","time" :  "2020-05-07 11:34:56""name" : "liucxi","avatar" : "../data/1001.png"} |
 | 2    | 聊天室初始化 | {"type" : "chat_init_request","time" :  "2020-05-07 11:34:56"} |
 | 3    | 聊天消息     | {"type" : "chat_request","time" :  "2020-05-07 11:34:56""from" : "dafiulbvao""to" : "dvkpvnjrnvipr""content" : "hello world"} |
+
 服务端
 | 序号 | 名称             | 协议内容                                                     |
 | ---- | ---------------- | ------------------------------------------------------------ |
