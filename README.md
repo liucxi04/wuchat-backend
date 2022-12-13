@@ -27,6 +27,7 @@ sh autobuild.sh
 ### 2. 下载并运行 wuchat-backend
 ```shell
 git clone git@github.com:liucxi04/wuchat-backend.git
+cd wuchat-backend
 mkdir build
 cd build &&
    cmake .. &&
